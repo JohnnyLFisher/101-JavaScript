@@ -1576,7 +1576,6 @@ const shoppingCart = {
 // Write a function named getTaxRate that takes in the above shopping cart as input and returns the tax rate.
 // Hint: How do you access a key's value on a object? The tax rate is one key of the entire shoppingCart object.
 function getTaxRate(shoppingCart) {
-	return shoppingCart.tax;
 }
 assert(getTaxRate(shoppingCart), .08);
 addToDone("Exercise 96 is correct")
@@ -1587,7 +1586,6 @@ addToDone("Exercise 96 is correct")
 // Write a function named numberOfItemTypes that takes in the shopping cart as input and returns the number of unique item types in the shopping cart.
 // We're not yet using the quantity of each item, but rather focusing on determining how many different types of items are in the cart.
 function numberOfItemTypes(shoppingCart) {
-	return shoppingCart.items.length;
 }
 assert(numberOfItemTypes(shoppingCart), 5);
 addToDone("Exercise 97 is correct.")
@@ -1598,13 +1596,6 @@ addToDone("Exercise 97 is correct.")
 // Write a function named totalNumberOfItems that takes in the shopping cart as input and returns the total number all item quantities.
 // This should return the sum of all of the quantities from each item type
 function totalNumberOfItems(shoppingCart) {
-	let totalItems = 0;
-
-	for (let item of shoppingCart.items) {
-		totalItems += item.quantity;
-	}
-
-	return totalItems;
 }
 assert(totalNumberOfItems(shoppingCart), 17);
 addToDone("Exercise 98 is correct.")
@@ -1615,13 +1606,6 @@ addToDone("Exercise 98 is correct.")
 // Write a function named getAverageItemPrice that takes in the shopping cart as an input and returns the average of all the item prices.
 // Hint - This should determine the total price divided by the number of types of items. This does not account for each item type's quantity.\
 function getAverageItemPrice(shoppingCart) {
-	let sum = 0;
-
-	for (let item of shoppingCart.items) {
-		sum += item.price;
-	}
-
-	return sum / numberOfItemTypes(shoppingCart);
 }
 assert(getAverageItemPrice(shoppingCart), 2.1420000000000003);
 addToDone("Exercise 99 is correct.")
@@ -1632,15 +1616,6 @@ addToDone("Exercise 99 is correct.")
 // Write a function named getAverageSpentPerItem that takes in the shopping cart and returns the average of summing each item's quanties times that item's price.
 // Hint: You may need to set an initial total price and total total quantity to zero, then sum up and divide that total price by the total quantity
 function getAverageSpentPerItem(shoppingCart) {
-	// returns the average of summing each item's quanties times that item's price
-	let totalCost = 0;
-	let totalQuantity = totalNumberOfItems(shoppingCart);
-
-	for (let item of shoppingCart.items) {
-		totalCost += (item.price * item.quantity);
-	}
-
-	return totalCost / totalQuantity;
 }
 assert(getAverageSpentPerItem(shoppingCart), 1.333529411764706);
 addToDone("Exercise 100 is correct.")
@@ -1652,16 +1627,6 @@ addToDone("Exercise 100 is correct.")
 // Hint: Similarly to how we sometimes begin a function with setting a variable to zero, we need a starting place:
 // Hint: Consider creating a variable that is a object with the keys "price" and "quantity" both set to 0. You can then compare each item's price and quantity total to the one from "most"
 function mostSpentOnItem(shoppingCart) {
-	let highestCostItem = shoppingCart.items[0];
-	let highestCostQuantity = highestCostItem.quantity;
-
-	for (let item of shoppingCart.items) {
-		let totalItemCost = item.price * item.quantity;
-		if (totalItemCost > (highestCostItem.price * highestCostQuantity)) {
-			highestCostItem = item;
-		}
-	}
-	return highestCostItem;
 }
 
 assert(mostSpentOnItem(shoppingCart), {
