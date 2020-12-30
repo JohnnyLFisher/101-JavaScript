@@ -1506,6 +1506,7 @@ function highestPriceBook(bookArray) {
 
 	return winner;
 }
+
 assert(highestPriceBook(books), {
 	"title": "The Visual Display of Quantitative Information",
 	"price": 38.00,
