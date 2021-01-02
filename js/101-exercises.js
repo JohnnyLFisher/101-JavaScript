@@ -1582,7 +1582,6 @@ assert(getTaxRate(shoppingCart), .08);
 addToDone("Exercise 96 is correct")
 
 
-
 // Exercise 97
 // Write a function named numberOfItemTypes that takes in the shopping cart as input and returns the number of unique item types in the shopping cart.
 // We're not yet using the quantity of each item, but rather focusing on determining how many different types of items are in the cart.
@@ -1591,7 +1590,6 @@ function numberOfItemTypes(shoppingCart) {
 }
 assert(numberOfItemTypes(shoppingCart), 5);
 addToDone("Exercise 97 is correct.")
-
 
 
 // Exercise 98
@@ -1609,7 +1607,6 @@ assert(totalNumberOfItems(shoppingCart), 17);
 addToDone("Exercise 98 is correct.")
 
 
-
 // Exercise 99
 // Write a function named getAverageItemPrice that takes in the shopping cart as an input and returns the average of all the item prices.
 // Hint - This should determine the total price divided by the number of types of items. This does not account for each item type's quantity.\
@@ -1623,7 +1620,6 @@ function getAverageItemPrice(shoppingCart) {
 }
 assert(getAverageItemPrice(shoppingCart), 2.1420000000000003);
 addToDone("Exercise 99 is correct.")
-
 
 
 // Exercise 100
