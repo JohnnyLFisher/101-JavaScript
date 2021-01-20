@@ -40,7 +40,7 @@ assert(doingJSRightNow, true, "Exercise 0");
 //  Exercise 1
 // On the line below, create a variable named onMarsRightNow and assign it the boolean value of false
 // For more on variables, see https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables
-var onMarsRightNow = false
+let onMarsRightNow = false
 assert(onMarsRightNow, false, "Exercise 1");
 addToDone("Exercise 1 is correct.");
 
@@ -48,21 +48,22 @@ addToDone("Exercise 1 is correct.");
 // For more on arrays, see https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays
 // Create a variable named fruits and assign it an array of strings containing the following fruits.
 // mango, banana, guava, kiwi, and strawberry.
-var fruits = ["mango", "banana", "guava", "kiwi", "strawberry"]
+ let fruits = ["mango", "banana", "guava", "kiwi", "strawberry"]
 assert(fruits, ["mango", "banana", "guava", "kiwi", "strawberry"], "Exercise 2");
 addToDone("Exercise 2 is correct.");
+
 
 // Exercise 3
 // Create a variable named vegetables and assign it an array of strings containing the following vegetables.
 // eggplant, broccoli, carrot, cauliflower, and zucchini
-var vegetables = ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"]
+let vegetables = ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"]
 assert(vegetables, ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"], "Exercise 3");
 addToDone("Exercise 3 is correct.");
 
 
 // Exercise 4
 // Create a variable named numbers and assign it an array of numbers, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 assert(numbers, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "Exercise 4");
 addToDone("Exercise 4 is correct.");
 
@@ -85,7 +86,7 @@ addToDone("Exercise 6 is correct")
 
 // Exercise 7
 // Given the array of numbers defined below, reverse the array of numbers that you created above.
-var someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 someNumbers.reverse()
 
 
@@ -113,55 +114,51 @@ addToDone("Exercise 9 is correct.")
 // Write the code necessary to produce a single array that holds all fruits then all vegetables in the order as they were sorted above.
 // Assign the result to a variable named fruitsAndVeggies.
 // *hint* the search engine search here would be "how to combine two arrays in JavaScript", for example.
-var fruitsAndVeggies = fruits.concat(vegetables)
+let fruitsAndVeggies = fruits.concat(vegetables)
 assert(fruitsAndVeggies, ['tomato', 'strawberry', 'mango', 'kiwi', 'guava', 'banana', 'broccoli', 'carrot', 'cauliflower', 'eggplant', 'tomato', 'zucchini'], "Exercise 10")
 addToDone("Exercise 10 is correct")
 
 // This function generates a random number that is both positive and even
-function randomPositiveEvenNumber() {
-	var randomNumber = Math.ceil(Math.random() * 100) + 10;
+const randomPositiveEvenNumber = () => {
+	let randomNumber = Math.ceil(Math.random() * 100) + 10;
 	if(randomNumber % 2 !== 0) {
 		return randomPositiveEvenNumber()
 	}
-
 	return randomNumber;
 }
 
 // this function generates a random number that is both positive and odd
-function randomPositiveOddNumber() {
-	var randomNumber = Math.ceil(Math.random() * 100) + 10;
+const randomPositiveOddNumber = () => {
+	let randomNumber = Math.ceil(Math.random() * 100) + 10;
 	if(randomNumber % 2 === 0) {
 		return randomPositiveOddNumber();
 	}
-
 	return randomNumber;
 }
 
 // this function generates a random number that is both negative and even.
-function randomNegativeEvenNumber() {
-	var randomNumber = Math.ceil(Math.random() * -100) - 10;
-	if(randomNumber % 2 === 0) {
-		return randomNumber;
+const randomNegativeEvenNumber = () => {
+	let randomNumber = Math.ceil(Math.random() * -100) - 10;
+	if(randomNumber % 2 !== 0) {
+		return randomNegativeEvenNumber();
 	}
-
-	return randomNegativeEvenNumber();
+	return randomNumber;
 }
 
 // this function generates a random number that is both negative and odd.
-function randomNegativeOddNumber() {
-	var randomNumber = Math.ceil(Math.random() * -100) - 10;
+const randomNegativeOddNumber = () => {
+	let randomNumber = Math.ceil(Math.random() * -100) - 10;
 	if(randomNumber % 2 === 0) {
 		return randomNegativeOddNumber();
 	}
-
 	return randomNumber;
 }
 
 // The next 4 lines create variables that hold these generated random numbers
-var positiveEvenNumber = randomPositiveEvenNumber()
-var positiveOddNumber = randomPositiveOddNumber();
-var negativeEvenNumber = randomNegativeEvenNumber();
-var negativeOddNumber = randomNegativeOddNumber();
+let positiveEvenNumber = randomPositiveEvenNumber()
+let positiveOddNumber = randomPositiveOddNumber();
+let negativeEvenNumber = randomNegativeEvenNumber();
+let negativeOddNumber = randomNegativeOddNumber();
 
 // Writing functions
 // See https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions for help with writing functions
@@ -170,9 +167,7 @@ var negativeOddNumber = randomNegativeOddNumber();
 
 // Example function defintion:
 // Write a sayHello function that adds the string "Hello, " to the beginning and "!" to the end of any given input.
-function sayHello(name) {
-	return "Hello, " + name + "!";
-}
+const  sayHello = name => `Hello, ${name}!`;
 
 assert(sayHello("Jane"), "Hello, Jane!");
 assert(sayHello("Pat"), "Hello, Pat!");
@@ -183,9 +178,7 @@ assert(sayHello("World"), "Hello, World!");
 
 // Heres another example function definition
 // This plusTwo function takes in a variable and adds the number 2 to it.
-function plusTwo(x) {
-	return x + 2;
-}
+const plusTwo = x => x + 2;
 
 assert(plusTwo(3), 5, "3 plus 2 is five")
 assert(plusTwo(-2), 0, "-2 plus 2 is zero")
@@ -195,10 +188,7 @@ assert(plusTwo(0), 2, "zero plus 2 is two")
 
 // Exercise 11
 // Write a function definition for a function named addOne that takes in a number and returns that number plus one
-function addOne(num) {
-	return num + 1;
-}
-
+const addOne = num => num + 1;
 
 assert(addOne(2), 3, "Exercise 11");
 assert(addOne(0), 1, "Exercise 11");
@@ -214,15 +204,7 @@ addToDone("Exercise 11 is correct.")
 // Is 5 positive? Is 0.25 positive? Is 0.00001 positive? Is -0.001 positive?
 // Is zero itself positive? What about infinity? What about negative infinity?
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators for guidance with JS comparison operators.
-function isPositive(x) {
-	if(x > 0) {
-		return(true)
-	} else {
-		return(false)
-	}
-}
-
-
+const isPositive = x => x > 0
 
 assert(isPositive(0.25), true, "Exercise 12");
 assert(isPositive(0.00001), true, "Exercise 12");
@@ -239,13 +221,7 @@ addToDone("Exercise 12 is correct.")
 
 // Exercise 13
 // Write a function definition named isNegative that takes in a number and returns true or False if that number is negative.
-function isNegative(x) {
-	if(x < 0) {
-		return(true)
-	} else {
-		return(false)
-	}
-}
+const isNegative = x => x < 0
 
 
 assert(isNegative(positiveOddNumber), false, "Exercise 13");
@@ -257,13 +233,8 @@ addToDone("Exercise 13 is correct.")
 
 // Exercise 14
 // Write a function definition named isOdd that takes in a number and returns true or false if that number is odd.
-function isOdd(x) {
-	if(x % 2 !== 0) {
-		return(true)
-	} else {
-		return(false)
-	}
-}
+const isOdd = x => x % 2 !== 0
+
 assert(isOdd(positiveOddNumber), true, "Exercise 14");
 assert(isOdd(positiveEvenNumber), false, "Exercise 14");
 assert(isOdd(negativeOddNumber), true, "Exercise 14");
@@ -272,13 +243,8 @@ addToDone("Exercise 14 is correct.")
 
 // Exercise 15
 // Write a function definition named isEven that takes in a number and returns true or false if that number is even.
-function isEven(x) {
-	if(x % 2 == 0) {
-		return(true)
-	} else {
-		return(false)
-	}
-}
+const isEven = x => x % 2 === 0
+
 assert(isEven(2), true, "Exercise 15");
 assert(isEven(positiveOddNumber), false, "Exercise 15");
 assert(isEven(positiveEvenNumber), true, "Exercise 15");
@@ -289,9 +255,8 @@ addToDone("Exercise 15 is correct.")
 
 // Exercise 16
 // Write a function definition named identity that takes in any input and returns that input. Don't overthink this one!
-function identity(x) {
-	return(x)
-}
+const identity = x => x
+
 assert(identity(fruits), fruits, "Exercise 16");
 assert(identity(vegetables), vegetables, "Exercise 16");
 assert(identity(positiveOddNumber), positiveOddNumber, "Exercise 16");
@@ -303,20 +268,7 @@ addToDone("Exercise 16 is correct.")
 
 // Exercise 17
 // Write a function definition named isPositiveOdd that takes in a number and returns true or false if the value is both greater than zero and odd
-function isPositiveOdd(x) {
-	if(x % 2 == 0) {
-		return(false)
-	}
-	else {
-		if(x < 0) {
-			return(false)
-		}
-		else{
-			return(true)
-		}
-	}
-}
-
+const isPositiveOdd = num => isPositive(num) && isOdd(num)
 
 assert(isPositiveOdd(3), true, "Exercise 17");
 assert(isPositiveOdd(positiveOddNumber), true, "Exercise 17");
@@ -328,19 +280,9 @@ addToDone("Exercise 17 is correct.")
 
 // Exercise 18
 // Write a function definition named isPositiveEven that takes in a number and returns true or false if the value is both greater than zero and even
-function isPositiveEven(x) {
-	if(x % 2 !== 0) {
-		return(false)
-	}
-	else {
-		if(x < 0) {
-			return(false)
-		}
-		else{
-			return(true)
-		}
-	}
-}
+
+const isPositiveEven = num => isPositive(num) && isEven(num)
+
 assert(isPositiveEven(4), true, "Exercise 18" );
 assert(isPositiveEven(positiveOddNumber), false, "Exercise 18");
 assert(isPositiveEven(positiveEvenNumber), true, "Exercise 18");
@@ -351,19 +293,8 @@ addToDone("Exercise 18 is correct.")
 
 // Exercise 19
 // Write a function definition named isNegativeOdd that takes in a number and returns true or false if the value is both less than zero and odd.
-function isNegativeOdd(x) {
-	if(x % 2 == 0) {
-		return(false)
-	}
-	else {
-		if(x > 0) {
-			return(false)
-		}
-		else{
-			return(true)
-		}
-	}
-}
+const isNegativeOdd = num => isNegative(num) && isOdd(num)
+
 assert(isNegativeOdd(-3), true, "Exercise 19" );
 assert(isNegativeOdd(positiveOddNumber), false, "Exercise 19");
 assert(isNegativeOdd(positiveEvenNumber), false, "Exercise 19");
@@ -374,19 +305,8 @@ addToDone("Exercise 19 is correct.")
 
 // Exercise 20
 // Write a function definition named isNegativeEven that takes in a number and returns true or false if the value is both less than zero and even.
-function isNegativeEven(x) {
-	if(x % 2 !== 0) {
-		return(false)
-	}
-	else {
-		if(x > 0) {
-			return(false)
-		}
-		else{
-			return(true)
-		}
-	}
-}
+const isNegativeEven = num => isNegative(num) && isEven(num)
+
 assert(isNegativeEven(-4), true, "Exercise 20" );
 assert(isNegativeEven(positiveOddNumber), false, "Exercise 20");
 assert(isNegativeEven(positiveEvenNumber), false, "Exercise 20");
@@ -398,9 +318,8 @@ addToDone("Exercise 20 is correct.")
 
 // Exercise 21
 // Write a function definition named half that takes in a number and returns half the provided number.
-function half(x) {
-	return x * 0.5
-}
+const half = num => num / 2
+
 assert(half(4), 2, "Exercise 21");
 assert(half(5), 2.5, "Exercise 21");
 assert(half(positiveOddNumber), positiveOddNumber / 2, "Exercise 21");
@@ -413,9 +332,8 @@ addToDone("Exercise 21 is correct.")
 
 // Exercise 22
 // Write a function definition named double that takes in a number and returns double the provided number.
-function double(x) {
-	return x * 2
-}
+const double = num => num * 2
+
 assert(double(4), 8, "Exercise 22");
 assert(double(5), 10, "Exercise 22");
 assert(double(positiveOddNumber), positiveOddNumber * 2, "Exercise 22");
@@ -428,9 +346,8 @@ addToDone("Exercise 22 is correct.")
 
 // Exercise 23
 // Write a function definition named triple that takes in a number and returns triple the provided number.
-function triple(x) {
-	return x * 3
-}
+const triple = num => num * 3
+
 assert(triple(4), 12, "Exercise 23");
 assert(triple(5), 15, "Exercise 23");
 assert(triple(positiveOddNumber), positiveOddNumber * 3, "Exercise 23");
@@ -443,9 +360,8 @@ addToDone("Exercise 23 is correct.")
 
 // Exercise 24
 // Write a function definition named reverseSign that takes in a number and returns the provided number but with the sign reversed.
-function reverseSign(x) {
-	return x * -1
-}
+const reverseSign = num => num * -1
+
 assert(reverseSign(4), -4, "Exercise 24");
 assert(reverseSign(-5), 5, "Exercise 24");
 assert(reverseSign(positiveOddNumber), positiveOddNumber * -1, "Exercise 24");
@@ -458,9 +374,8 @@ addToDone("Exercise 24 is correct.")
 
 // Exercise 25
 // Write a function definition named absoluteValue that takes in a number and returns the absolute value of the provided number
-function absoluteValue(x) {
-	return Math.abs(x)
-}
+const absoluteValue = num => Math.abs(num)
+
 assert(absoluteValue(4), 4, "Exercise 25");
 assert(absoluteValue(-5), 5, "Exercise 25");
 assert(absoluteValue(positiveOddNumber), positiveOddNumber, "Exercise 25");
@@ -473,13 +388,8 @@ addToDone("Exercise 25 is correct.")
 
 // Exercise 26
 // Write a function definition named isMultipleOfThree that takes in a number and returns true or false if the number is evenly divisible by 3.
-function isMultipleOfThree(x) {
-	if(x % 3 == 0) {
-		return(true)
-	} else {
-		return(false)
-	}
-}
+const isMultipleOfThree = num => num % 3 === 0
+
 assert(isMultipleOfThree(3), true, "Exercise 26");
 assert(isMultipleOfThree(15), true, "Exercise 26");
 assert(isMultipleOfThree(9), true, "Exercise 26");
@@ -492,13 +402,8 @@ addToDone("Exercise 26 is correct.")
 
 // Exercise 27
 // Write a function definition named isMultipleOfFive that takes in a number and returns true or false if the number is evenly divisible by 5.
-function isMultipleOfFive(x) {
-	if(x % 5 == 0) {
-		return(true)
-	} else {
-		return(false)
-	}
-}
+const isMultipleOfFive = num => num % 5 === 0
+
 assert(isMultipleOfFive(3), false, "Exercise 27");
 assert(isMultipleOfFive(15), true, "Exercise 27");
 assert(isMultipleOfFive(9), false, "Exercise 27");
@@ -510,19 +415,8 @@ addToDone("Exercise 27 is correct.")
 
 // Exercise 28
 // Write a function definition named isMultipleOfBothThreeAndFive that takes in a number and returns true or false if the number is evenly divisible by both 3 and 5.
-function isMultipleOfBothThreeAndFive(x) {
-	if(x % 3 !== 0) {
-		return(false)
-	}
-	else {
-		if(x % 5 !== 0) {
-			return(false)
-		}
-		else{
-			return(true)
-		}
-	}
-}
+const isMultipleOfBothThreeAndFive = num => num % 15 === 0
+
 assert(isMultipleOfBothThreeAndFive(15), true, "Exercise 28");
 assert(isMultipleOfBothThreeAndFive(45), true, "Exercise 28");
 assert(isMultipleOfBothThreeAndFive(3), false, "Exercise 28");
@@ -535,9 +429,8 @@ addToDone("Exercise 28 is correct.")
 
 // Exercise 29
 // Write a function definition named square that takes in a number and returns the number times itself.
-function square(x) {
-	return x * x
-}
+const square = num => num * num
+
 assert(square(3), 9, "Exercise 29");
 assert(square(2), 4, "Exercise 29");
 assert(square(9), 81, "Exercise 29");
@@ -548,9 +441,8 @@ addToDone("Exercise 29 is correct.")
 
 // Exercise 30
 // Write a function definition named add that takes in two numbers and returns the sum.
-function add(x, y) {
-	return x + y
-}
+const add = (num1, num2) => num1 + num2
+
 
 assert(add(3, 2), 5, "Exercise 30");
 assert(add(10, -2), 8, "Exercise 30");
@@ -561,9 +453,8 @@ addToDone("Exercise 30 is correct.")
 
 // Exercise 31
 // Write a function definition named cube that takes in a number and returns the number times itself, times itself.
-function cube(x) {
-	return x * x * x
-}
+const cube = num => num * num * num
+
 assert(cube(3), 27, "Exercise 31");
 assert(cube(2), 8, "Exercise 31");
 assert(cube(5), 125, "Exercise 31");
@@ -574,9 +465,7 @@ addToDone("Exercise 31 is correct.")
 
 // Exercise 32
 // Write a function definition named squareRoot that takes in a number and returns the square root of the provided number
-function squareRoot(x) {
-	return Math.sqrt(x)
-}
+const squareRoot = num => Math.sqrt(num)
 
 assert(squareRoot(4), 2.0, "Exercise 32");
 assert(squareRoot(64), 8.0, "Exercise 32");
@@ -588,9 +477,7 @@ addToDone("Exercise 32 is correct.")
 
 // Exercise 33
 // Write a function definition named subtract that takes in two numbers and returns the first minus the second argument.
-function subtract(x, y) {
-	return x - y
-}
+const subtract = (num1, num2) => num1 - num2
 
 assert(subtract(8, 6), 2, "Exercise 33");
 assert(subtract(27, 4), 23, "Exercise 33");
@@ -601,9 +488,8 @@ addToDone("Exercise 33 is correct.")
 
 // Exercise 34
 // Write a function definition named multiply that takes in two numbers and returns the first times the second argument.
-function multiply(x, y) {
-	return x * y
-}
+const multiply = (num1, num2) => num1 * num2
+
 assert(multiply(2, 1), 2, "Exercise 34");
 assert(multiply(3, 5), 15, "Exercise 34");
 assert(multiply(5, 2), 10, "Exercise 34");
@@ -613,9 +499,7 @@ addToDone("Exercise 34 is correct.")
 
 // Exercise 35
 // Write a function definition named divide that takes in two numbers and returns the first argument divided by the second argument.
-function divide(x, y) {
-	return x / y
-}
+const divide = (num1, num2) => num1 / num2
 
 assert(divide(27, 9), 3, "Exercise 35");
 assert(divide(15, 3), 5, "Exercise 35");
@@ -626,9 +510,8 @@ addToDone("Exercise 35 is correct.")
 
 // Exercise 36
 // Write a function definition named quotient that takes in two numbers and returns the quotient of dividing the first argument by the second argument.
-function quotient(x, y) {
-	return Math.floor(x/y)
-}
+const quotient = (num1, num2) => Math.floor(num1/num2)
+
 assert(quotient(27, 9), 3, "Exercise 36");
 assert(quotient(5, 2), 2, "Exercise 36");
 assert(quotient(10, 3), 3, "Exercise 36");
@@ -637,9 +520,8 @@ addToDone("Exercise 36 is correct.")
 
 // Exercise 37
 // Write a function definition named remainder that takes in two numbers and returns the remainder of first argument divided by the second argument.
-function remainder(x,y) {
-	return x % y
-}
+const remainder = (num1 ,num2) => num1 % num2
+
 assert(remainder(3, 3), 0, "Exercise 37");
 assert(remainder(5, 2), 1, "Exercise 37");
 assert(remainder(7, 5), 2, "Exercise 37");
@@ -649,9 +531,8 @@ addToDone("Exercise 37 is correct.")
 
 // Exercise 38
 // Write a function definition named sumOfSquares that takes in two numbers, squares each number, then returns the sum of both squares.
-function sumOfSquares(x,y) {
-	return (x * x) + (y * y)
-}
+const sumOfSquares = (num1,num2) => square(num1) + square(num2)
+
 assert(sumOfSquares(3, 2), 13, "Exercise 38");
 assert(sumOfSquares(5, 2), 29, "Exercise 38");
 assert(sumOfSquares(2, 4), 20, "Exercise 38");
@@ -661,9 +542,8 @@ addToDone("Exercise 38 is correct.")
 
 // Exercise 39
 // Write a function definition named timesTwoPlusThree that takes in a number, multiplies it by two, adds 3 and returns the result.
-function timesTwoPlusThree(x) {
-	return x * 2 + 3
-}
+const timesTwoPlusThree = num => num * 2 + 3
+
 assert(timesTwoPlusThree(0), 3, "Exercise 39");
 assert(timesTwoPlusThree(1), 5, "Exercise 39");
 assert(timesTwoPlusThree(2), 7, "Exercise 39");
@@ -674,9 +554,8 @@ addToDone("Exercise 39 is correct.")
 
 // Exercise 40
 // Write a function definition named areaOfRectangle that takes in two numbers and returns the product.
-function areaOfRectangle(x, y) {
-	return x * y
-}
+const areaOfRectangle = (num1, num2) => num1 * num2
+
 assert(areaOfRectangle(1, 3), 3, "Exercise 40");
 assert(areaOfRectangle(5, 2), 10, "Exercise 40");
 assert(areaOfRectangle(2, 7), 14, "Exercise 40");
@@ -687,9 +566,7 @@ addToDone("Exercise 40 is correct.")
 
 // Exercise 41
 // Write a function definition named areaOfCircle that takes in a number representing a circle's radius and returns the area of the circle
-function areaOfCircle(x) {
-	return Math.PI * (x * x)
-}
+const areaOfCircle = num => Math.PI * square(num)
 
 assert(areaOfCircle(3), 28.274333882308138, "Exercise 41");
 assert(areaOfCircle(5), 78.53981633974483, "Exercise 41");
@@ -699,9 +576,8 @@ addToDone("Exercise 41 is correct.")
 
 // Exercise 42
 // Write a function definition named circumference that takes in a number representing a circle's radius and returns the circumference.
-function circumference(x) {
-	return Math.PI * x * 2
-}
+const circumference= num => Math.PI * num * 2
+
 assert(circumference(3), 18.84955592153876, "Exercise 42");
 assert(circumference(5), 31.41592653589793, "Exercise 42");
 assert(circumference(7), 43.982297150257104, "Exercise 42");
@@ -713,20 +589,19 @@ addToDone("Exercise 42 is correct.")
 
 // Example function where the function returns true if the input is one OR two.
 function isOneOrTwo(x) {
-	return x == 1 || x == 2
+	return x === 1 || x === 2
 }
 
 // Example function where the input is one of 3 possibilities
 function isOneOrTwoOrThree(x) {
-	return x == 1 || x == 2 || x == 3
+	return x === 1 || x === 2 || x=== 3
 }
 
 // Exercise 43
 // Write a function definition named isVowel that takes in value and returns true if the value is a, e, i, o, u in upper or lower case.
-function isVowel(letter) {
-	let vowels = 'aeiou'.split("");
-	return vowels.includes(letter.toLowerCase());
-}
+let vowels = 'aeiouAEIOU'.split('');
+const isVowel = letter => vowels.includes(letter.toLowerCase());
+
 assert(isVowel("a"), true, "Exercise 43");
 assert(isVowel("U"), true, "Exercise 43");
 assert(isVowel("banana"), false, "Exercise 43");
@@ -737,16 +612,16 @@ addToDone("Exercise 43 is correct.")
 
 // Exercise 44
 // Write a function definition named hasVowels that takes in value and returns true if the string contains any vowels.
-function hasVowels(str) {
-	let vowels = 'aeiou'.split("");
+const hasVowels = str => {
 	let stringArray = str.split("");
 	for (let char of stringArray) {
-		if (vowels.includes(char.toLowerCase())) {
+		if (vowels.includes(char)) {
 			return true;
 		}
 	}
 	return false;
 }
+
 assert(hasVowels("banana"), true, "Exercise 44");
 assert(hasVowels("ubuntu"), true, "Exercise 44");
 assert(hasVowels("QQQQ"), false, "Exercise 44");
@@ -756,17 +631,16 @@ addToDone("Exercise 44 is correct.")
 
 // Exercise 45
 // Write a function definition named countVowels that takes in value and returns the count of the nubmer of vowels in a sequence.
-function countVowels(str) {
+const countVowels = str => {
 	let count = 0;
-	let vowels = 'aeiou'.split("");
-
 	for (let i = 0; i < str.length; i++) {
-		if (vowels.includes(str[i].toLowerCase())) {
+		if (vowels.includes(str[i])) {
 			count++
 		}
 	}
 	return count;
 }
+
 assert(countVowels("banana"), 3, "Exercise 45");
 assert(countVowels("ubuntu"), 3, "Exercise 45");
 assert(countVowels("mango"), 2, "Exercise 45");
@@ -777,16 +651,16 @@ addToDone("Exercise 45 is correct.")
 
 // Exercise 46
 // Write a function definition named removeVowels that takes in string and returns the string without any vowels
-function removeVowels(str) {
-	let vowels = 'aeiou'.split("");
+const removeVowels = str => {
 	let result = '';
 	for (let i = 0; i < str.length; i++) {
-		if (!vowels.includes(str[i].toLowerCase())) {
+		if (!vowels.includes(str[i])) {
 			result += str[i];
 		}
 	}
 	return result;
 }
+
 assert(removeVowels("banana"), "bnn", "Exercise 46");
 assert(removeVowels("ubuntu"), "bnt", "Exercise 46");
 assert(removeVowels("mango"), "mng", "Exercise 46");
@@ -796,8 +670,7 @@ addToDone("Exercise 46 is correct.")
 
 // Exercise 47
 // Write a function definition named startsWithVowel that takes in string and true if the string starts with a vowel
-function startsWithVowel(str) {
-	let vowels = 'aeiou'.split("");
+const startsWithVowel = str => {
 	for (let vowel of vowels) {
 		if (str.startsWith(vowel)) {
 			return true;
@@ -813,8 +686,7 @@ addToDone("Exercise 47 is correct.")
 
 // Exercise 48
 // Write a function definition named endsWithVowel that takes in string and true if the string ends with a vowel
-function endsWithVowel(str) {
-	let vowels = 'aeiou'.split("");
+const endsWithVowel = str => {
 	for (let vowel of vowels) {
 		if (str.endsWith(vowel)) {
 			return true;
@@ -832,15 +704,8 @@ addToDone("Exercise 48 is correct.")
 
 // Exercise 49
 // Write a function definition named startsAndEndsWithVowel that takes in string and returns true if the string starts and ends with a vowel
-function startsAndEndsWithVowel(str) {
-	let vowels = 'aeiou'.split("");
-	for (let vowel of vowels) {
-		if (str.endsWith(vowel) && str.startsWith(vowel)) {
-			return true;
-		}
-	}
-	return false;
-}
+const startsAndEndsWithVowel = str => startsWithVowel(str) && endsWithVowel(str)
+
 assert(startsAndEndsWithVowel("ubuntu"), true, "Exercise 49");
 assert(startsAndEndsWithVowel("banana"), false, "Exercise 49");
 assert(startsAndEndsWithVowel("mango"), false, "Exercise 49");
@@ -849,9 +714,8 @@ addToDone("Exercise 49 is correct.")
 
 // Exercise 50
 // Write a function definition named first that takes in sequence and returns the first value of that sequence.
-function first(sequence) {
-	return sequence[0];
-}
+const first = sequence => sequence[0];
+
 assert(first("ubuntu"), "u", "Exercise 50");
 assert(first([1, 2, 3]), 1, "Exercise 50");
 assert(first(["JS", "is", "awesome"]), "JS", "Exercise 50");
@@ -862,9 +726,8 @@ addToDone("Exercise 50 is correct.")
 
 // Exercise 51
 // Write a function definition named second that takes in sequence and returns the second value of that sequence.
-function second(sequence){
-	return sequence[1]
-}
+const second = sequence => sequence[1];
+
 assert(second("ubuntu"), "b", "Exercise 51");
 assert(second([1, 2, 3]), 2, "Exercise 51");
 assert(second(["JS", "is", "awesome"]), "is", "Exercise 51");
@@ -873,9 +736,8 @@ addToDone("Exercise 51 is correct.")
 
 // Exercise 52
 // Write a function definition named third that takes in sequence and returns the third value of that sequence.
-function third(sequence){
-	return sequence [2]
-}
+const third = sequence => sequence[2];
+
 assert(third("ubuntu"), "u", "Exercise 52");
 assert(third([1, 2, 3]), 3, "Exercise 52");
 assert(third(["JS", "is", "awesome"]), "awesome", "Exercise 52");
@@ -884,9 +746,8 @@ addToDone("Exercise 52 is correct.")
 
 // Exercise 53
 // Write a function definition named forth that takes in sequence and returns the forth value of that sequence.
-function forth(sequence){
-	return sequence [3]
-}
+const forth = sequence => sequence[3];
+
 assert(forth("ubuntu"), "n", "Exercise 53");
 assert(forth([1, 2, 3, 4]), 4, "Exercise 53");
 assert(forth(["JS", "is", "awesome", "right?"]), "right?", "Exercise 53");
@@ -895,9 +756,8 @@ addToDone("Exercise 53 is correct.")
 
 // Exercise 54
 // Write a function definition named last that takes in sequence and returns the last value of that sequence.
-function last(sequence){
-	return sequence [(sequence.length - 1)]
-}
+const last = sequence => sequence[sequence.length - 1];
+
 assert(last("ubuntu"), "u", "Exercise 54");
 assert(last([1, 2, 3, 4]), 4, "Exercise 54");
 assert(last(["JS", "is", "awesome"]), "awesome", "Exercise 54");
@@ -907,9 +767,8 @@ addToDone("Exercise 54 is correct.")
 
 // Exercise 55
 // Write a function definition named secondToLast that takes in sequence and returns the second to last value of that sequence.
-function secondToLast(sequence){
-	return sequence [(sequence.length - 2)]
-}
+const secondToLast = sequence => sequence[sequence.length - 2];
+
 assert(secondToLast("ubuntu"), "t", "Exercise 55");
 assert(secondToLast([1, 2, 3, 4]), 3, "Exercise 55");
 assert(secondToLast(["JS", "is", "awesome"]), "is", "Exercise 55");
@@ -919,9 +778,8 @@ addToDone("Exercise 55 is correct.")
 
 // Exercise 56
 // Write a function definition named thirdToLast that takes in sequence and returns the third to last value of that sequence.
-function thirdToLast(sequence){
-	return sequence [(sequence.length - 3)]
-}
+const thirdToLast = sequence => sequence[sequence.length - 3];
+
 assert(thirdToLast("ubuntu"), "n", "Exercise 56");
 assert(thirdToLast([1, 2, 3, 4]), 2, "Exercise 56");
 assert(thirdToLast(["JS", "is", "awesome"]), "JS", "Exercise 56");
@@ -931,10 +789,8 @@ addToDone("Exercise 56 is correct.")
 
 // Exercise 57
 // Write a function definition named firstAndSecond that takes in sequence and returns the first and second value of that sequence as an array
-function firstAndSecond(sequence){
-	var firstSecond = [sequence[0],sequence[1]]
-	return firstSecond
-}
+const firstAndSecond = sequence => [first(sequence), second(sequence)]
+
 assert(firstAndSecond([1, 2, 3, 4]), [1, 2], "Exercise 57");
 assert(firstAndSecond(["JS", "is", "awesome"]), ["JS", "is"], "Exercise 57");
 assert(firstAndSecond(["strawberry", "kiwi", "mango", "guava"]), ["strawberry", "kiwi"], "Exercise 57");
@@ -943,10 +799,8 @@ addToDone("Exercise 57 is correct.")
 
 // Exercise 58
 // Write a function definition named firstAndLast that takes in sequence and returns the first and last value of that sequence as an array
-function firstAndLast(sequence){
-	var firstLast = [sequence[0],sequence[sequence.length - 1]]
-	return firstLast
-}
+const firstAndLast = sequence => [first(sequence), last(sequence)]
+
 assert(firstAndLast([1, 2, 3, 4]), [1, 4], "Exercise 58");
 assert(firstAndLast(["JS", "is", "awesome"]), ["JS", "awesome"], "Exercise 58");
 assert(firstAndLast(["strawberry", "kiwi", "mango", "guava"]), ["strawberry", "guava"], "Exercise 58");
@@ -956,7 +810,7 @@ addToDone("Exercise 58 is correct.")
 
 // Exercise 59
 // Write a function definition named firstToLast that takes in sequence and returns the sequence with the first value moved to the end of the sequence.
-function firstToLast(sequence){
+const firstToLast = sequence => {
 	sequence.push(sequence.shift())
 	return sequence
 }
@@ -969,12 +823,12 @@ addToDone("Exercise 59 is correct.")
 
 // Exercise 60
 // Write a function definition named sumAll that takes in sequence of numbers and returns all the numbers added together.
-function sumAll(sequence){
-	var sum = sequence.reduce(function(a, b){
-		return a + b;
+const sumAll = sequence => {
+	return sequence.reduce((a, b) => {
+		return a + b
 	}, 0);
-	return sum
 }
+
 assert(sumAll([1, 2, 3, 4]), 10, "Exercise 60");
 assert(sumAll([3, 3, 3]), 9, "Exercise 60");
 assert(sumAll([0, 5, 6]), 11, "Exercise 60");
@@ -984,13 +838,8 @@ addToDone("Exercise 60 is correct.")
 
 //  Exercise 61
 //  Write a function definition named mean that takes in sequence of numbers and returns the average value
-function mean(sequence) {
-	let sum = 0;
-	for (let num of sequence) {
-		sum += num;
-	}
-	return sum / sequence.length;
-}
+const mean = sequence => sumAll(sequence) / sequence.length;
+
 assert(mean([1, 2, 3, 4]), 2.5, "Exercise 61");
 assert(mean([3, 3, 3]), 3, "Exercise 61");
 assert(mean([1, 5, 6]), 4, "Exercise 61");
@@ -1015,6 +864,7 @@ function median(sequence) {
 		// odd array length
 		sequence[Math.floor(sequence.length / 2)];
 }
+
 assert(median([1, 2, 3, 4, 5]), 3.0, "Exercise 62");
 assert(median([1, 2, 3]), 2.0, "Exercise 62");
 assert(median([1, 5, 6]), 5.0, "Exercise 62");
@@ -1024,11 +874,7 @@ addToDone("Exercise 62 is correct.")
 
 // Exercise 63
 // Write a function definition named maxMinusMin that takes in an array of numbers and returns the difference of the maximum minus theminimum.
-function maxMinusMin(numArray) {
-	let maxNum = Math.max(...numArray);
-	let minNum = Math.min(...numArray);
-	return maxNum - minNum;
-}
+const maxMinusMin = numArray => Math.max(...numArray) - Math.min(...numArray);
 
 assert(maxMinusMin([1, 2, 2, 8, 3, 4]), 7, "Exercise 63");
 assert(maxMinusMin([1, 1, 2, 3, 9]), 8, "Exercise 63");
@@ -1038,14 +884,14 @@ addToDone("Exercise 63 is correct.")
 
 // Exercise 64
 // Write a function definition named productOfAll that takes in sequence of numbers and returns the product of multiplying all the numbers together
-function productOfAll(numArray) {
+const productOfAll = numArray => {
 	let product = numArray[0];
-
 	for (let i = 1; i < numArray.length; i++) {
 		product *= numArray[i];
 	}
 	return product;
 }
+
 assert(productOfAll([1, 2, 3]), 6, "Exercise 64");
 assert(productOfAll([3, 4, 5]), 60, "Exercise 64");
 assert(productOfAll([2, 2, 3, 0]), 0, "Exercise 64");
@@ -1054,9 +900,8 @@ addToDone("Exercise 64 is correct.")
 
 // Exercise 65
 // Write a function definition named getHighestNumber that takes in sequence of numbers and returns the largest number.
-function getHighestNumber(numArray) {
-	return Math.max(...numArray);
-}
+const getHighestNumber = numArray => Math.max(...numArray);
+
 assert(getHighestNumber([1, 2, 3]), 3, "Exercise 65");
 assert(getHighestNumber([1, 5, 2, 3, 4]), 5, "Exercise 65");
 assert(getHighestNumber([5, 1, 2, 4, 9]), 9, "Exercise 65");
@@ -1067,9 +912,7 @@ addToDone("Exercise 65 is correct.")
 
 // Exercise 66
 // Write a function definition named getSmallestNumber that takes in sequence of numbers and returns the smallest number.
-function getSmallestNumber(numArray) {
-	return Math.min(...numArray);
-}
+const getSmallestNumber = numArray => Math.min(...numArray);
 
 assert(getSmallestNumber([1, 2, 3]), 1, "Exercise 66");
 assert(getSmallestNumber([3, 5, 9, 8, 1]), 1, "Exercise 66");
@@ -1079,9 +922,8 @@ addToDone("Exercise 66 is correct.")
 
 // Exercise 67
 // Write a function definition named onlyOddNumbers that takes in sequence of numbers and returns the odd numbers in an array.
-function onlyOddNumbers(numArray) {
-	return numArray.filter((element) => element % 2 !== 0);
-}
+const onlyOddNumbers = numArray => numArray.filter((element) => isOdd(element));
+
 assert(onlyOddNumbers([1, 2, 3]), [1, 3]);
 assert(onlyOddNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-5, -3, -1, 1, 3, 5]);
 assert(onlyOddNumbers([-4, -3, 1]), [-3, 1]);
@@ -1091,9 +933,8 @@ addToDone("Exercise 67 is correct.")
 
 // Exercise 68
 // Write a function definition named onlyEvenNumbers that takes in sequence of numbers and returns the even numbers in an array.
-function onlyEvenNumbers(numArray) {
-	return numArray.filter((element) => element % 2 === 0);
-}
+const onlyEvenNumbers = numArray => numArray.filter((element) => isEven(element));
+
 assert(onlyEvenNumbers([1, 2, 3]), [2]);
 assert(onlyEvenNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-4, -2, 2, 4]);
 assert(onlyEvenNumbers([-4, -3, 1]), [-4]);
@@ -1103,9 +944,8 @@ addToDone("Exercise 68 is correct.")
 
 // Exercise 69
 // Write a function definition named onlyPositiveNumbers that takes in sequence of numbers and returns the positive numbers in an array.
-function onlyPositiveNumbers(numArray) {
-	return numArray.filter((element) => element >= 0);
-}
+const onlyPositiveNumbers = numArray => numArray.filter((element) => isPositive(element));
+
 assert(onlyPositiveNumbers([1, 2, 3]), [1, 2, 3]);
 assert(onlyPositiveNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [1, 2, 3, 4, 5]);
 assert(onlyPositiveNumbers([-4, -3, 1]), [1]);
@@ -1114,9 +954,8 @@ addToDone("Exercise 69 is correct.")
 
 // Exercise 70
 // Write a function definition named onlyNegativeNumbers that takes in sequence of numbers and returns the negative numbers in an array.
-function onlyNegativeNumbers(numArray) {
-	return numArray.filter((element) => element < 0);
-}
+const onlyNegativeNumbers = numArray => numArray.filter((element) => isNegative(element));
+
 assert(onlyNegativeNumbers([1, 2, 3]), []);
 assert(onlyNegativeNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-5, -4, -3, -2, -1]);
 assert(onlyNegativeNumbers([-4, -3, 1]), [-4, -3]);
@@ -1126,8 +965,8 @@ addToDone("Exercise 70 is correct.");
 
 // Exercise 71
 // Write a function definition named hasEvens that takes in sequence of numbers and returns true if there are any even numbers in the sequence
-function hasEvens(numArray) {
-	let evenNums = numArray.filter((element) => element % 2 === 0);
+const hasEvens  = numArray => {
+	let evenNums = numArray.filter((element) => isEven(element));
 	return evenNums.length > 0;
 }
 assert(hasEvens([1, 2, 3]), true);
@@ -1140,9 +979,8 @@ addToDone("Exercise 71 is correct.");
 
 // Exercise 72
 // Write a function definition named countEvens that takes in sequence of numbers and returns the number of even numbers
-function countEvens(numArray) {
-	return numArray.filter((element) => element % 2 === 0).length;
-}
+const countEvens = numArray => numArray.filter((element) => isEven(element)).length;
+
 assert(countEvens([1, 2, 3]), 1);
 assert(countEvens([2, 5, 6]), 2);
 assert(countEvens([3, 3, 3]), 0);
@@ -1152,10 +990,11 @@ addToDone("Exercise 72 is correct.")
 
 // Exercise 73
 // Write a function definition named hasOdds that takes in sequence of numbers and returns true if there are any odd numbers in the sequence
-function hasOdds(numArray) {
-	let element = numArray.find((element) => element % 2 !== 0);
-	return element !== undefined;
+const hasOdds  = numArray => {
+	let oddNums = numArray.filter((element) => isOdd(element));
+	return oddNums.length > 0;
 }
+
 assert(hasOdds([1, 2, 3]), true);
 assert(hasOdds([2, 5, 6]), true);
 assert(hasOdds([3, 3, 3]), true);
@@ -1165,9 +1004,8 @@ addToDone("Exercise 73 is correct.")
 
 // Exercise 74
 // Write a function definition named countOdds that takes in sequence of numbers and returns a count of the any odd numbers in the sequence
-function countOdds(numArray) {
-	return numArray.filter((element) => element % 2 !== 0).length;
-}
+const countOdds = numArray => numArray.filter((element) => isOdd(element)).length;
+
 assert(countOdds([1, 2, 3]), 2);
 assert(countOdds([2, 5, 6]), 1);
 assert(countOdds([3, 3, 3]), 3);
@@ -1177,9 +1015,8 @@ addToDone("Exercise 74 is correct.")
 
 // Exercise 75
 // Write a function definition named countNegatives that takes in sequence of numbers and returns a count of the number of negative numbers
-function countNegatives(numArray) {
-	return numArray.filter((element) => element < 0).length;
-}
+const countNegatives = numArray => numArray.filter((element) => isNegative(element)).length;
+
 assert(countNegatives([1, -2, 3]), 1);
 assert(countNegatives([2, -5, -6]), 2);
 assert(countNegatives([3, 3, 3]), 0);
@@ -1188,9 +1025,8 @@ addToDone("Exercise 75 is correct.")
 
 // Exercise 76
 // Write a function definition named countPositives that takes in sequence of numbers and returns a count of the number of positive numbers
-function countPositives(numArray) {
-	return numArray.filter((element) => element >= 0).length;
-}
+const countPositives = numArray => numArray.filter((element) => isPositive(element)).length;
+
 assert(countPositives([1, -2, 3]), 2);
 assert(countPositives([2, -5, -6]), 1);
 assert(countPositives([3, 3, 3]), 3);
@@ -1200,9 +1036,8 @@ addToDone("Exercise 76 is correct.")
 
 // Exercise 77
 // Write a function definition named onlyPositiveEvens that takes in sequence of numbers and returns an array containing all the positive evens from the sequence
-function onlyPositiveEvens(numArray) {
-	return numArray.filter((element) => element >= 0 && element % 2 === 0);
-}
+const onlyPositiveEvens = numArray => numArray.filter((element) => isPositiveEven(element));
+
 assert(onlyPositiveEvens([1, -2, 3]), []);
 assert(onlyPositiveEvens([2, -5, -6]), [2]);
 assert(onlyPositiveEvens([3, 3, 4, 6]), [4, 6]);
@@ -1212,9 +1047,8 @@ addToDone("Exercise 77 is correct.")
 
 // Exercise 78
 // Write a function definition named onlyPositiveOdds that takes in sequence of numbers and returns an array containing all the positive odd numbers from the sequence
-function onlyPositiveOdds(numArray) {
-	return numArray.filter((element) => element >= 0 && element % 2 !== 0);
-}
+const onlyPositiveOdds = numArray => numArray.filter((element) => isPositiveOdd(element));
+
 assert(onlyPositiveOdds([1, -2, 3]), [1, 3]);
 assert(onlyPositiveOdds([2, -5, -6]), []);
 assert(onlyPositiveOdds([3, 3, 4, 6]), [3, 3]);
@@ -1224,9 +1058,8 @@ addToDone("Exercise 78 is correct.")
 
 // Exercise 79
 // Write a function definition named onlyNegativeEvens that takes in sequence of numbers and returns an array containing all the negative even numbers from the sequence
-function onlyNegativeEvens(numArray) {
-	return numArray.filter((element) => element < 0 && element % 2 === 0);
-}
+const onlyNegativeEvens = numArray => numArray.filter((element) => isNegativeEven(element));
+
 assert(onlyNegativeEvens([1, -2, 3]), [-2]);
 assert(onlyNegativeEvens([2, -5, -6]), [-6]);
 assert(onlyNegativeEvens([3, 3, 4, 6]), []);
@@ -1236,9 +1069,8 @@ addToDone("Exercise 79 is correct.")
 
 // Exercise 80
 // Write a function definition named onlyNegativeOdds that takes in sequence of numbers and returns an array containing all the negative odd numbers from the sequence
-function onlyNegativeOdds(numArray) {
-	return numArray.filter((element) => element < 0 && element % 2 !== 0);
-}
+const onlyNegativeOdds = numArray => numArray.filter((element) => isNegativeOdd(element));
+
 assert(onlyNegativeOdds([1, -2, 3]), []);
 assert(onlyNegativeOdds([2, -5, -6]), [-5]);
 assert(onlyNegativeOdds([3, 3, 4, 6]), []);
