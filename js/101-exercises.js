@@ -60,6 +60,8 @@ addToDone("Exercise 2 is correct.");
 // Create a variable named vegetables and assign it an array of strings containing the following vegetables.
 // eggplant, broccoli, carrot, cauliflower, and zucchini
 
+let vegetables = ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"]
+
 assert(vegetables, ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"], "Exercise 3");
 addToDone("Exercise 3 is correct.");
 
