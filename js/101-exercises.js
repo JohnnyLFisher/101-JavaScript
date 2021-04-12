@@ -69,6 +69,8 @@ addToDone("Exercise 3 is correct.");
 // Exercise 4
 // Create a variable named numbers and assign it an array of numbers, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 assert(numbers, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "Exercise 4");
 addToDone("Exercise 4 is correct.");
 
