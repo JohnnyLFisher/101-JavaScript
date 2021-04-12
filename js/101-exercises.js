@@ -14,8 +14,8 @@ const assert = function(actual, expected, message = "") {
 
 // Keep this function here in order to add correct questions to the counter
 function addToDone(message) {
-	var node = document.createElement("LI");                 // Create a <li> node
-	var textnode = document.createTextNode(message);         // Create a text node
+	let node = document.createElement("LI");                 // Create a <li> node
+	let textnode = document.createTextNode(message);         // Create a text node
 	node.appendChild(textnode);                              // Append the text to <li>
 	node.classList.add("finished");
 	document.querySelector(".correct ul").appendChild(node);
@@ -30,7 +30,7 @@ function addToDone(message) {
 // Example problem setup: Create a variable named doingJSRightNow and assign it the boolean true.
 // The line below creates the variable named doingJSRightNow and assigns the boolean value true
 // To complete Exercise #0, uncomment the following line of JS
-var doingJSRightNow = true
+let doingJSRightNow = true
 
 // The lines below will test your answer. If you see an error, then it means that your answer is incorrect or incomplete.
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_defined to understand this error message.
@@ -96,7 +96,9 @@ addToDone("Exercise 6 is correct")
 
 // Exercise 7
 // Given the array of numbers defined below, reverse the array of numbers that you created above.
-var someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+someNumbers.reverse()
 
 
 assert(someNumbers, [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], "Exercise 7")
