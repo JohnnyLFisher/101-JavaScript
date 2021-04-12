@@ -30,7 +30,7 @@ function addToDone(message) {
 // Example problem setup: Create a variable named doingJSRightNow and assign it the boolean true.
 // The line below creates the variable named doingJSRightNow and assigns the boolean value true
 // To complete Exercise #0, uncomment the following line of JS
-// var doingJSRightNow = true
+var doingJSRightNow = true
 
 // The lines below will test your answer. If you see an error, then it means that your answer is incorrect or incomplete.
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_defined to understand this error message.
@@ -88,6 +88,7 @@ addToDone("Exercise 5 is correct");
 // add the string "tomato" onto the end of the vegetables array.
 // Recommend using the built-in JS operation to add to an array.
 
+vegetables.push("tomato")
 
 assert(vegetables,["eggplant", "broccoli", "carrot", "cauliflower", "zucchini", "tomato"], "Exercise 6");
 addToDone("Exercise 6 is correct")
