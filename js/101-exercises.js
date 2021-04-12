@@ -51,6 +51,8 @@ addToDone("Exercise 1 is correct.");
 // Create a variable named fruits and assign it an array of strings containing the following fruits.
 // mango, banana, guava, kiwi, and strawberry.
 
+let fruits = ["mango", "banana", "guava", "kiwi", "strawberry"]
+
 assert(fruits, ["mango", "banana", "guava", "kiwi", "strawberry"], "Exercise 2");
 addToDone("Exercise 2 is correct.");
 
