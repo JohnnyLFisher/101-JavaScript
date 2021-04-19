@@ -30,11 +30,14 @@ function addToDone(message) {
 // Example problem setup: Create a variable named doingJSRightNow and assign it the boolean true.
 // The line below creates the variable named doingJSRightNow and assigns the boolean value true
 // To complete Exercise #0, uncomment the following line of JS
+
 let doingJSRightNow = true
+
 
 // The lines below will test your answer. If you see an error, then it means that your answer is incorrect or incomplete.
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_defined to understand this error message.
 assert(doingJSRightNow, true, "Exercise 0");
+
 
 
 //  Exercise 1
@@ -43,8 +46,11 @@ assert(doingJSRightNow, true, "Exercise 0");
 
 let onMarsRightNow = false
 
+
 assert(onMarsRightNow, false, "Exercise 1");
 addToDone("Exercise 1 is correct.");
+
+
 
 // Exercise 2
 // For more on arrays, see https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays
@@ -53,8 +59,11 @@ addToDone("Exercise 1 is correct.");
 
 let fruits = ["mango", "banana", "guava", "kiwi", "strawberry"]
 
+
 assert(fruits, ["mango", "banana", "guava", "kiwi", "strawberry"], "Exercise 2");
 addToDone("Exercise 2 is correct.");
+
+
 
 // Exercise 3
 // Create a variable named vegetables and assign it an array of strings containing the following vegetables.
@@ -62,8 +71,10 @@ addToDone("Exercise 2 is correct.");
 
 let vegetables = ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"]
 
+
 assert(vegetables, ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"], "Exercise 3");
 addToDone("Exercise 3 is correct.");
+
 
 
 // Exercise 4
@@ -71,34 +82,41 @@ addToDone("Exercise 3 is correct.");
 
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+
 assert(numbers, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "Exercise 4");
 addToDone("Exercise 4 is correct.");
+
 
 
 // Exercise 5
 // Add the string "tomato" to the end of the fruits array.
 // *Hint* Recommend finding and using a built-in JS operation to add to an array rather than recreating the array.
 
-fruits.push("tomato")
+fruits.push("tomato");
+
 
 assert(fruits, ["mango", "banana", "guava", "kiwi", "strawberry", "tomato"], "Exercise 5");
 addToDone("Exercise 5 is correct");
+
+
 
 // Exercise 6
 // add the string "tomato" onto the end of the vegetables array.
 // Recommend using the built-in JS operation to add to an array.
 
-vegetables.push("tomato")
+vegetables.push("tomato");
+
 
 assert(vegetables,["eggplant", "broccoli", "carrot", "cauliflower", "zucchini", "tomato"], "Exercise 6");
 addToDone("Exercise 6 is correct")
+
 
 
 // Exercise 7
 // Given the array of numbers defined below, reverse the array of numbers that you created above.
 let someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-someNumbers.reverse()
+someNumbers.reverse();
 
 
 assert(someNumbers, [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], "Exercise 7")
@@ -109,6 +127,9 @@ addToDone("Exercise 7 is correct")
 // Exercise 8
 // Sort the vegetables in alphabetical order. Recommend finding a way to sort the array with a built-in method
 
+vegetables.sort();
+
+
 assert(vegetables, ['broccoli', 'carrot', 'cauliflower', 'eggplant', 'tomato', 'zucchini'], "Exercise 8")
 addToDone("Exercise 8 is correct.")
 
@@ -117,8 +138,12 @@ addToDone("Exercise 8 is correct.")
 // Exercise 9
 // Write the code necessary to sort the fruits in reverse alphabetical order
 
+
+
+
 assert(fruits, ['tomato', 'strawberry', 'mango', 'kiwi', 'guava', 'banana'], "Exercise 9")
 addToDone("Exercise 9 is correct.")
+
 
 
 // Exercise 10
@@ -126,12 +151,15 @@ addToDone("Exercise 9 is correct.")
 // Assign the result to a variable named fruitsAndVeggies.
 // *hint* the search engine search here would be "how to combine two arrays in JavaScript", for example.
 
+
+
+
 assert(fruitsAndVeggies, ['tomato', 'strawberry', 'mango', 'kiwi', 'guava', 'banana', 'broccoli', 'carrot', 'cauliflower', 'eggplant', 'tomato', 'zucchini'], "Exercise 10")
 addToDone("Exercise 10 is correct")
 
 // This function generates a random number that is both positive and even
 function randomPositiveEvenNumber() {
-	var randomNumber = Math.ceil(Math.random() * 100) + 10;
+	let randomNumber = Math.ceil(Math.random() * 100) + 10;
 	if(randomNumber % 2 !== 0) {
 		return randomPositiveEvenNumber()
 	}
@@ -141,7 +169,7 @@ function randomPositiveEvenNumber() {
 
 // this function generates a random number that is both positive and odd
 function randomPositiveOddNumber() {
-	var randomNumber = Math.ceil(Math.random() * 100) + 10;
+	let randomNumber = Math.ceil(Math.random() * 100) + 10;
 	if(randomNumber % 2 === 0) {
 		return randomPositiveOddNumber();
 	}
@@ -151,7 +179,7 @@ function randomPositiveOddNumber() {
 
 // this function generates a random number that is both negative and even.
 function randomNegativeEvenNumber() {
-	var randomNumber = Math.ceil(Math.random() * -100) - 10;
+	let randomNumber = Math.ceil(Math.random() * -100) - 10;
 	if(randomNumber % 2 === 0) {
 		return randomNumber;
 	}
@@ -161,7 +189,7 @@ function randomNegativeEvenNumber() {
 
 // this function generates a random number that is both negative and odd.
 function randomNegativeOddNumber() {
-	var randomNumber = Math.ceil(Math.random() * -100) - 10;
+	let randomNumber = Math.ceil(Math.random() * -100) - 10;
 	if(randomNumber % 2 === 0) {
 		return randomNegativeOddNumber();
 	}
@@ -170,10 +198,10 @@ function randomNegativeOddNumber() {
 }
 
 // The next 4 lines create variables that hold these generated random numbers
-var positiveEvenNumber = randomPositiveEvenNumber()
-var positiveOddNumber = randomPositiveOddNumber();
-var negativeEvenNumber = randomNegativeEvenNumber();
-var negativeOddNumber = randomNegativeOddNumber();
+let positiveEvenNumber = randomPositiveEvenNumber()
+let positiveOddNumber = randomPositiveOddNumber();
+let negativeEvenNumber = randomNegativeEvenNumber();
+let negativeOddNumber = randomNegativeOddNumber();
 
 // Writing functions
 // See https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions for help with writing functions
