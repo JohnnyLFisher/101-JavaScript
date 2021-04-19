@@ -151,7 +151,9 @@ addToDone("Exercise 9 is correct.")
 // Assign the result to a variable named fruitsAndVeggies.
 // *hint* the search engine search here would be "how to combine two arrays in JavaScript", for example.
 
-
+let fruitsAndVeggies = [];
+fruits.forEach(fruit => fruitsAndVeggies.push(fruit));
+vegetables.forEach(vegetable => fruitsAndVeggies.push(vegetable));
 
 
 assert(fruitsAndVeggies, ['tomato', 'strawberry', 'mango', 'kiwi', 'guava', 'banana', 'broccoli', 'carrot', 'cauliflower', 'eggplant', 'tomato', 'zucchini'], "Exercise 10")
