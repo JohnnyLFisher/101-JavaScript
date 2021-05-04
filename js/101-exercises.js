@@ -280,6 +280,7 @@ addToDone("Exercise 12 is correct.")
 // Exercise 13
 // Write a function definition named isNegative that takes in a number and returns true or False if that number is negative.
 
+const isNegative = (x) => !isPositive(x);
 
 
 assert(isNegative(positiveOddNumber), false, "Exercise 13");
@@ -287,6 +288,7 @@ assert(isNegative(positiveEvenNumber), false, "Exercise 13");
 assert(isNegative(negativeOddNumber), true, "Exercise 13");
 assert(isNegative(negativeEvenNumber), true, "Exercise 13");
 addToDone("Exercise 13 is correct.")
+
 
 
 // Exercise 14
