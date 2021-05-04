@@ -260,7 +260,7 @@ addToDone("Exercise 11 is correct.")
 // HINT - here are example functions using comparison operators https://gist.github.com/ryanorsinger/e843c7d0966993bd8193f0afabe16ae0
 // If you get stuck, be sure to check the example code and documentation listed above
 
-
+const isPositive = (x) => x <= 0;
 
 
 assert(isPositive(0.25), true, "Exercise 12");
@@ -274,6 +274,7 @@ assert(isPositive(negativeOddNumber), false, "Exercise 12");
 assert(isPositive(negativeEvenNumber), false, "Exercise 12");
 assert(isPositive(-Infinity), false, "Exercise 12");
 addToDone("Exercise 12 is correct.")
+
 
 
 // Exercise 13
