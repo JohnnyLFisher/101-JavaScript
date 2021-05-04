@@ -238,6 +238,8 @@ assert(plusTwo(0), 2, "zero plus 2 is two")
 // Exercise 11
 // Write a function definition for a function named addOne that takes in a number and returns that number plus one
 
+const addOne = (x) => x + 1
+
 
 
 assert(addOne(2), 3, "Exercise 11");
@@ -245,6 +247,7 @@ assert(addOne(0), 1, "Exercise 11");
 assert(addOne(positiveEvenNumber), positiveEvenNumber + 1, "Exercise 11");
 assert(addOne(negativeOddNumber), negativeOddNumber + 1, "Exercise 11");
 addToDone("Exercise 11 is correct.")
+
 
 
 // The next exercises will be focusing on basic operators in JS
