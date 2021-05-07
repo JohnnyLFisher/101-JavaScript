@@ -431,6 +431,9 @@ addToDone("Exercise 22 is correct.")
 // Exercise 23
 // Write a function definition named triple that takes in a number and returns triple the provided number.
 
+const triple = (x) => x*3
+
+
 assert(triple(4), 12, "Exercise 23");
 assert(triple(5), 15, "Exercise 23");
 assert(triple(positiveOddNumber), positiveOddNumber * 3, "Exercise 23");
