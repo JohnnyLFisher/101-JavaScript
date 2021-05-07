@@ -399,6 +399,9 @@ addToDone("Exercise 20 is correct.")
 // Exercise 21
 // Write a function definition named half that takes in a number and returns half the provided number.
 
+const half = (x) => x/2;
+
+
 assert(half(4), 2, "Exercise 21");
 assert(half(5), 2.5, "Exercise 21");
 assert(half(positiveOddNumber), positiveOddNumber / 2, "Exercise 21");
