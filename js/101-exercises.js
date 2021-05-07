@@ -335,9 +335,11 @@ assert(identity(negativeEvenNumber), negativeEvenNumber, "Exercise 16");
 addToDone("Exercise 16 is correct.")
 
 
+
 // Exercise 17
 // Write a function definition named isPositiveOdd that takes in a number and returns true or false if the value is both greater than zero and odd
 
+const isPositiveOdd = (x) => isPositive(x)&&isOdd(x);
 
 
 assert(isPositiveOdd(3), true, "Exercise 17");
@@ -346,6 +348,7 @@ assert(isPositiveOdd(positiveEvenNumber), false, "Exercise 17");
 assert(isPositiveOdd(negativeOddNumber), false, "Exercise 17");
 assert(isPositiveOdd(negativeEvenNumber), false, "Exercise 17");
 addToDone("Exercise 17 is correct.")
+
 
 
 // Exercise 18
