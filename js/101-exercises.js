@@ -354,12 +354,16 @@ addToDone("Exercise 17 is correct.")
 // Exercise 18
 // Write a function definition named isPositiveEven that takes in a number and returns true or false if the value is both greater than zero and even
 
+const isPositiveEven = (x) => isPositive(x)&&isEven(x);
+
+
 assert(isPositiveEven(4), true, "Exercise 18" );
 assert(isPositiveEven(positiveOddNumber), false, "Exercise 18");
 assert(isPositiveEven(positiveEvenNumber), true, "Exercise 18");
 assert(isPositiveEven(negativeOddNumber), false, "Exercise 18");
 assert(isPositiveEven(negativeEvenNumber), false, "Exercise 18");
 addToDone("Exercise 18 is correct.")
+
 
 
 // Exercise 19
