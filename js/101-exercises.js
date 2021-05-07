@@ -415,6 +415,9 @@ addToDone("Exercise 21 is correct.")
 // Exercise 22
 // Write a function definition named double that takes in a number and returns double the provided number.
 
+const double = (x) => x*2;
+
+
 assert(double(4), 8, "Exercise 22");
 assert(double(5), 10, "Exercise 22");
 assert(double(positiveOddNumber), positiveOddNumber * 2, "Exercise 22");
