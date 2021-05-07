@@ -431,7 +431,7 @@ addToDone("Exercise 22 is correct.")
 // Exercise 23
 // Write a function definition named triple that takes in a number and returns triple the provided number.
 
-const triple = (x) => x*3
+const triple = (x) => x*3;
 
 
 assert(triple(4), 12, "Exercise 23");
@@ -446,6 +446,9 @@ addToDone("Exercise 23 is correct.")
 
 // Exercise 24
 // Write a function definition named reverseSign that takes in a number and returns the provided number but with the sign reversed.
+
+const reverseSign = (x) => x*-1;
+
 
 assert(reverseSign(4), -4, "Exercise 24");
 assert(reverseSign(-5), 5, "Exercise 24");
