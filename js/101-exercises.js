@@ -618,14 +618,21 @@ addToDone("Exercise 35 is correct.")
 // Exercise 36
 // Write a function definition named quotient that takes in two numbers and returns the quotient of dividing the first argument by the second argument.
 
+const quotient = (x,y) => (x-(x%y))/y;
+
+
 assert(quotient(27, 9), 3, "Exercise 36");
 assert(quotient(5, 2), 2, "Exercise 36");
 assert(quotient(10, 3), 3, "Exercise 36");
 addToDone("Exercise 36 is correct.")
 
 
+
 // Exercise 37
 // Write a function definition named remainder that takes in two numbers and returns the remainder of first argument divided by the second argument.
+
+const remainder = (x,y) => x%y;
+
 
 assert(remainder(3, 3), 0, "Exercise 37");
 assert(remainder(5, 2), 1, "Exercise 37");
@@ -637,6 +644,9 @@ addToDone("Exercise 37 is correct.")
 // Exercise 38
 // Write a function definition named sumOfSquares that takes in two numbers, squares each number, then returns the sum of both squares.
 
+const sumOfSquares = (x,y) => square(x)+square(y);
+
+
 assert(sumOfSquares(3, 2), 13, "Exercise 38");
 assert(sumOfSquares(5, 2), 29, "Exercise 38");
 assert(sumOfSquares(2, 4), 20, "Exercise 38");
@@ -647,6 +657,9 @@ addToDone("Exercise 38 is correct.")
 // Exercise 39
 // Write a function definition named timesTwoPlusThree that takes in a number, multiplies it by two, adds 3 and returns the result.
 
+const timesTwoPlusThree = (x) => (x*2)+3;
+
+
 assert(timesTwoPlusThree(0), 3, "Exercise 39");
 assert(timesTwoPlusThree(1), 5, "Exercise 39");
 assert(timesTwoPlusThree(2), 7, "Exercise 39");
@@ -655,8 +668,12 @@ assert(timesTwoPlusThree(5), 13, "Exercise 39");
 addToDone("Exercise 39 is correct.")
 
 
+
 // Exercise 40
 // Write a function definition named areaOfRectangle that takes in two numbers and returns the product.
+
+const areaOfRectangle = (x,y) => x*y;
+
 
 assert(areaOfRectangle(1, 3), 3, "Exercise 40");
 assert(areaOfRectangle(5, 2), 10, "Exercise 40");
