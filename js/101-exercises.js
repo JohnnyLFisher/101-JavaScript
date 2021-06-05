@@ -686,11 +686,14 @@ addToDone("Exercise 40 is correct.")
 // Exercise 41
 // Write a function definition named areaOfCircle that takes in a number representing a circle's radius and returns the area of the circle
 
+const areaOfCircle = (x) => Math.PI*Math.pow(x,2);
+
 
 assert(areaOfCircle(3), 28.274333882308138, "Exercise 41");
 assert(areaOfCircle(5), 78.53981633974483, "Exercise 41");
 assert(areaOfCircle(7), 153.93804002589985, "Exercise 41");
 addToDone("Exercise 41 is correct.")
+
 
 
 // Exercise 42
