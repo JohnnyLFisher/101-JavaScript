@@ -699,6 +699,9 @@ addToDone("Exercise 41 is correct.")
 // Exercise 42
 // Write a function definition named circumference that takes in a number representing a circle's radius and returns the circumference.
 
+const circumference = (x) => Math.PI*2*x;
+
+
 assert(circumference(3), 18.84955592153876, "Exercise 42");
 assert(circumference(5), 31.41592653589793, "Exercise 42");
 assert(circumference(7), 43.982297150257104, "Exercise 42");
@@ -711,17 +714,27 @@ addToDone("Exercise 42 is correct.")
 
 // Example function where the function returns true if the input is one OR two.
 function isOneOrTwo(x) {
-	return x == 1 || x == 2
+	return x === 1 || x === 2
 }
 
 // Example function where the input is one of 3 possibilities
 function isOneOrTwoOrThree(x) {
-	return x == 1 || x == 2 || x == 3
+	return x === 1 || x === 2 || x === 3
 }
 
 // Exercise 43
 // Review this code carefully https://gist.github.com/ryanorsinger/5627b954d119dabb3d8c44d56b38c354 if you want more guidance on Exercises 43, 44, and 45.
 // Write a function definition named isVowel that takes in value and returns true if the value is a, e, i, o, u in upper or lower case.
+function isVowel(x){
+	let vowels = ["a", "e", "i", "O", "u","A","E","I","O","U"];
+	return vowels.includes(x);
+}
+
+if (!isVowel("a")) {
+	console.log("False")
+} else {
+	console.log("True")
+}
 
 assert(isVowel("a"), true, "Exercise 43");
 assert(isVowel("U"), true, "Exercise 43");
