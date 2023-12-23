@@ -41,78 +41,89 @@ function addToDone(message) {
 // On the line below, create a variable named onMarsRightNow and assign it the boolean value of false
 // For more on variables, see https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables
 
-
+const onMarsRightNow = false;
 
 
 assert(onMarsRightNow, false, "Exercise 1");
 addToDone("Exercise 1 is correct.");
+
+
 
 // Exercise 2
 // For more on arrays, see https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays
 // Create a variable named fruits and assign it an array of strings containing the following fruits.
 // mango, banana, guava, kiwi, and strawberry.
 
-
+const fruits = ["mango", "banana", "guava", "kiwi", "strawberry"];
 
 
 assert(fruits, ["mango", "banana", "guava", "kiwi", "strawberry"], "Exercise 2");
 addToDone("Exercise 2 is correct.");
 
+
+
 // Exercise 3
 // Create a variable named vegetables and assign it an array of strings containing the following vegetables.
 // eggplant, broccoli, carrot, cauliflower, and zucchini
 
-
+const vegetables = ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"];
 
 
 assert(vegetables, ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"], "Exercise 3");
 addToDone("Exercise 3 is correct.");
 
+
+
 // Exercise 4
 // Create a variable named numbers and assign it an array of numbers, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
-
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
 assert(numbers, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "Exercise 4");
 addToDone("Exercise 4 is correct.");
 
 
+
 // Exercise 5
 // Add the string "tomato" to the end of the fruits array.
 // *Hint* Recommend finding and using a built-in JS operation to add to an array rather than recreating the array.
 
-
+fruits.push("tomato");
 
 
 assert(fruits, ["mango", "banana", "guava", "kiwi", "strawberry", "tomato"], "Exercise 5");
 addToDone("Exercise 5 is correct");
 
+
+
 // Exercise 6
 // add the string "tomato" onto the end of the vegetables array.
 // Recommend using the built-in JS operation to add to an array.
 
-
+vegetables.push("tomato")
 
 
 assert(vegetables,["eggplant", "broccoli", "carrot", "cauliflower", "zucchini", "tomato"], "Exercise 6");
 addToDone("Exercise 6 is correct")
 
 
+
 // Exercise 7
 // Given the array of numbers defined below, reverse the array of numbers that you created above.
 
-
+const someNumbers = numbers.reverse();
 
 
 assert(someNumbers, [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], "Exercise 7")
 addToDone("Exercise 7 is correct")
 
 
+
 // Exercise 8
 // Sort the vegetables in alphabetical order. Recommend finding a way to sort the array with a built-in method
 
-
+vegetables.sort();
 
 
 assert(vegetables, ['broccoli', 'carrot', 'cauliflower', 'eggplant', 'tomato', 'zucchini'], "Exercise 8")
@@ -123,11 +134,12 @@ addToDone("Exercise 8 is correct.")
 // Exercise 9
 // Write the code necessary to sort the fruits in reverse alphabetical order
 
-
+fruits.sort().reverse();
 
 
 assert(fruits, ['tomato', 'strawberry', 'mango', 'kiwi', 'guava', 'banana'], "Exercise 9")
 addToDone("Exercise 9 is correct.")
+
 
 
 // Exercise 10
@@ -135,11 +147,13 @@ addToDone("Exercise 9 is correct.")
 // Assign the result to a variable named fruitsAndVeggies.
 // *hint* the search engine search here would be "how to combine two arrays in JavaScript", for example.
 
-
+const fruitsAndVeggies = fruits.concat(vegetables);
 
 
 assert(fruitsAndVeggies, ['tomato', 'strawberry', 'mango', 'kiwi', 'guava', 'banana', 'broccoli', 'carrot', 'cauliflower', 'eggplant', 'tomato', 'zucchini'], "Exercise 10")
 addToDone("Exercise 10 is correct")
+
+
 
 // This function generates a random number that is both positive and even
 function randomPositiveEvenNumber() {
@@ -220,7 +234,7 @@ assert(plusTwo(0), 2, "zero plus 2 is two")
 // Exercise 11
 // Write a function definition for a function named addOne that takes in a number and returns that number plus one
 
-
+const addOne = (x) => x + 1;
 
 
 assert(addOne(2), 3, "Exercise 11");
@@ -238,7 +252,7 @@ addToDone("Exercise 11 is correct.")
 // Is zero itself positive? What about infinity? What about negative infinity?
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators for guidance with JS comparison operators.
 
-
+const isPositive = (x) => !(Math.sign(x) === 0 || Math.sign(x) === -1);
 
 
 assert(isPositive(0.25), true, "Exercise 12");
@@ -254,10 +268,11 @@ assert(isPositive(-Infinity), false, "Exercise 12");
 addToDone("Exercise 12 is correct.")
 
 
+
 // Exercise 13
 // Write a function definition named isNegative that takes in a number and returns true or False if that number is negative.
 
-
+const isNegative = (x) => !isPositive(x);
 
 
 assert(isNegative(positiveOddNumber), false, "Exercise 13");
@@ -267,10 +282,11 @@ assert(isNegative(negativeEvenNumber), true, "Exercise 13");
 addToDone("Exercise 13 is correct.")
 
 
+
 // Exercise 14
 // Write a function definition named isOdd that takes in a number and returns true or false if that number is odd.
 
-
+const isOdd = (x) => Math.abs(x)%2 === 1;
 
 
 assert(isOdd(positiveOddNumber), true, "Exercise 14");
@@ -279,10 +295,12 @@ assert(isOdd(negativeOddNumber), true, "Exercise 14");
 assert(isOdd(negativeEvenNumber), false, "Exercise 14");
 addToDone("Exercise 14 is correct.")
 
+
+
 // Exercise 15
 // Write a function definition named isEven that takes in a number and returns true or false if that number is even.
 
-
+const isEven = (x) => !isOdd(x);
 
 
 assert(isEven(2), true, "Exercise 15");
@@ -293,10 +311,11 @@ assert(isEven(negativeEvenNumber), true, "Exercise 15");
 addToDone("Exercise 15 is correct.")
 
 
+
 // Exercise 16
 // Write a function definition named identity that takes in any input and returns that input. Don't overthink this one!
 
-
+const identity = (x) => x;
 
 
 assert(identity(fruits), fruits, "Exercise 16");
@@ -308,10 +327,11 @@ assert(identity(negativeEvenNumber), negativeEvenNumber, "Exercise 16");
 addToDone("Exercise 16 is correct.")
 
 
+
 // Exercise 17
 // Write a function definition named isPositiveOdd that takes in a number and returns true or false if the value is both greater than zero and odd
 
-
+const isPositiveOdd = (x) => isPositive(x) && isOdd(x);
 
 
 assert(isPositiveOdd(3), true, "Exercise 17");
@@ -322,10 +342,11 @@ assert(isPositiveOdd(negativeEvenNumber), false, "Exercise 17");
 addToDone("Exercise 17 is correct.")
 
 
+
 // Exercise 18
 // Write a function definition named isPositiveEven that takes in a number and returns true or false if the value is both greater than zero and even
 
-
+const isPositiveEven = (x) => isPositive(x) && isEven(x);
 
 
 assert(isPositiveEven(4), true, "Exercise 18" );
@@ -336,10 +357,11 @@ assert(isPositiveEven(negativeEvenNumber), false, "Exercise 18");
 addToDone("Exercise 18 is correct.")
 
 
+
 // Exercise 19
 // Write a function definition named isNegativeOdd that takes in a number and returns true or false if the value is both less than zero and odd.
 
-
+const isNegativeOdd = (x) => isNegative(x) && isOdd(x);
 
 
 assert(isNegativeOdd(-3), true, "Exercise 19" );
@@ -350,10 +372,11 @@ assert(isNegativeOdd(negativeEvenNumber), false, "Exercise 19");
 addToDone("Exercise 19 is correct.")
 
 
+
 // Exercise 20
 // Write a function definition named isNegativeEven that takes in a number and returns true or false if the value is both less than zero and even.
 
-
+const isNegativeEven = (x) => isNegative(x) && isEven(x);
 
 
 assert(isNegativeEven(-4), true, "Exercise 20" );
